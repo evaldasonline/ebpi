@@ -1,0 +1,17 @@
+sleep 60
+
+    echo `date` > /tmp/mailbody.txt
+    curl 'https://api.ipify.org?format=json' >> /tmp/mailbody.txt
+    echo  ...  >> /tmp/mailbody.txt
+    ifconfig | grep "inet addr" | grep -v 127.0.0.1 >> /tmp/mailbody.txt
+    sendemail -l ~/email.log     \
+        -f "pitunnelmail@gmail.com"   \
+        -u "PI tunnel connected"     \
+        -t "evaldas.baciulis@gmail.com" \
+        -s "smtp.gmail.com:587"  \
+        -o tls=yes \
+        -xu "pitunnelmail@gmail.com" \
+        -xp "mail password" \
+        -o message-file="/tmp/mailbody.txt"
+
+
