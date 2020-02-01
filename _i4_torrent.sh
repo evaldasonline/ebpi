@@ -4,6 +4,9 @@ cd ~
 sudo apt-get -y update && sudo apt-get -y install qbittorrent-nox
 sudo cp ./script/qbittorrent.service /etc/systemd/system/qbittorrent.service
 
+sudo adduser --quiet --disabled-password --shell /bin/bash --home /home/qbtuser --gecos "User" qbtuser
+sudo mkdir /home/qbtuser/Downloads
+sudo chmod -R 777 /home/qbtuser/Downloads
 
 #start to accept license agreements
 echo ------------------

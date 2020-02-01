@@ -12,7 +12,8 @@ echo     guest ok = yes >>  ~/q.tmp
 echo     read only = no >>  ~/q.tmp
 echo     create mask = 0755 >>  ~/q.tmp
 
-
+sudo adduser --quiet --disabled-password --shell /bin/bash --home /home/qbtuser --gecos "User" qbtuser
+sudo mkdir /home/qbtuser/Downloads
 sudo chmod -R 777 /home/qbtuser/Downloads
 sudo chmod a+w /etc/samba/smb.conf
 sudo cat ~/q.tmp >> /etc/samba/smb.conf
@@ -20,3 +21,5 @@ sudo chmod a-w /etc/samba/smb.conf
 
 sudo systemctl daemon-reload
 sudo systemctl restart smbd.service nmbd.service
+
+sudo rm ~/q.tmp

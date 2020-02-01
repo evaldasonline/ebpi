@@ -1,8 +1,10 @@
 #----------------------------------------------------------------------------------
 # AIRVPN ---------------------------------------------------------------------------
-cd ~
 
 sudo apt -y install openvpn
+sudo apt -y install sendemail
+sudo apt install ‘perl(Net::SSLeay)’
+sudo apt install ‘perl(IO::Socket::SSL)’
 
 # !!!  must acuire  AirVPN.tar.gz -
 tar xvzf ~/AirVPN.tar.gz
@@ -41,7 +43,6 @@ sudo rm ~/iptables.save
 sudo ln -s /etc/iptables.save ~/iptables.save
 
 #############################
-sudo apt -y install sendemail
 sudo cp -f ./script/delay-send /etc/openvpn/delay-send
 sudo chmod +x /etc/openvpn/delay-send
 
