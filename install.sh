@@ -1,5 +1,5 @@
 sudo apt -y update && sudo apt -y upgrade
-sudo apt -y install make cmake git mc curl htop
+sudo apt -y install make cmake git mc curl htop net-tools
 
 sudo adduser --quiet --disabled-password --shell /bin/bash --home /home/qbtuser --gecos "User" qbtuser
 sudo mkdir /home/qbtuser/Downloads

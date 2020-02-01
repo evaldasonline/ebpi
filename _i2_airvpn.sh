@@ -3,12 +3,11 @@
 
 sudo apt -y install openvpn
 sudo apt -y install sendemail
-sudo apt install ‘perl(Net::SSLeay)’
-sudo apt install ‘perl(IO::Socket::SSL)’
+sudo apt install libio-socket-ssl-perl libnet-ssleay-perl net-tools
 
 # !!!  must acuire  AirVPN.tar.gz -
 tar xvzf ~/AirVPN.tar.gz
-sudo cp ~/AirVPN_Netherlands_UDP-443.ovpn /etc/openvpn/auto.ovpn
+sudo cp AirVPN_Netherlands_UDP-443.ovpn /etc/openvpn/auto.ovpn
 sudo  ln -s /etc/openvpn/auto.ovpn /etc/openvpn/auto.conf
 
 echo sudo nohup openvpn /etc/openvpn/auto.ovpn \& > ~/start-vpn
