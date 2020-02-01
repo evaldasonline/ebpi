@@ -9,11 +9,8 @@ sudo apt-get -y install php libapache2-mod-php php-mysql
 sudo service apache2 restart
 sudo /etc/init.d/apache2 restart
 
-sudo wget p.kmuk.lt/pi/p.php -P /var/www/html/
+sudo cp ./script/p.php /var/www/html/p.php
 php -r 'echo "\n\nYour PHP installation is working fine.\n\n\n";'
 
-
+echo set password for web access ...
 sudo htpasswd -c /etc/apache2/.htpasswd w
-
-
-

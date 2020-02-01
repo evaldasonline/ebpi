@@ -1,6 +1,5 @@
 #----------------------------------------------------------------------------------
 # SAMBA ---------------------------------------------------------------------------
-cd ~
 sudo apt -y install samba
 
 sudo cp /etc/samba/smb.conf  /etc/samba/smb.ok
@@ -21,5 +20,3 @@ sudo chmod a-w /etc/samba/smb.conf
 
 sudo systemctl daemon-reload
 sudo systemctl restart smbd.service nmbd.service
-
-

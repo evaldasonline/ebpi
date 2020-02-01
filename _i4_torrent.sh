@@ -2,11 +2,8 @@
 #TORRENT ---------------------------------------------------------------------------
 cd ~
 sudo apt-get -y update && sudo apt-get -y install qbittorrent-nox
-wget p.kmuk.lt/pi/qbittorrent.service
-sudo mv -f qbittorrent.service /etc/systemd/system/qbittorrent.service
+sudo cp ./script/qbittorrent.service /etc/systemd/system/qbittorrent.service
 
-sudo adduser --quiet --disabled-password --shell /bin/bash --home /home/qbtuser --gecos "User" qbtuser
-#echo "qbtuser:newpassword" | chpasswd
 
 #start to accept license agreements
 echo ------------------
@@ -21,6 +18,6 @@ sudo systemctl enable qbittorrent
 
 sudo systemctl status qbittorrent
 
-# http://ip-of-server:8080 
+# http://ip-of-server:8080
 sudo systemctl start qbittorrent
 sudo systemctl status qbittorrent

@@ -4,7 +4,7 @@ case "$1" in
   start)
 
         sysctl -w net.ipv4.ip_forward=1
-	sudo iptables-restore /etc/iptables.save
+      	sudo iptables-restore /etc/iptables.save
 
         nohup /etc/openvpn/delay-send 2>&1 &
         ;;
@@ -20,4 +20,3 @@ case "$1" in
         exit 3
         ;;
 esac
-
