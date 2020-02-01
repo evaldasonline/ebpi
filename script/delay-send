@@ -5,11 +5,11 @@ sleep 60
     echo  ...  >> /tmp/mailbody.txt
     ifconfig | grep "inet addr" | grep -v 127.0.0.1 >> /tmp/mailbody.txt
     sendemail -l ~/email.log     \
-        -f "pitunnelmail@gmail.com"   \
+        -f "FROM"   \
         -u "PI tunnel connected"     \
-        -t "evaldasonline@yahoo.com" \
+        -t "TO" \
         -s "smtp.gmail.com:587"  \
         -o tls=yes \
-        -xu "pitunnelmail@gmail.com" \
-        -xp "mail password" \
+        -xu "FROM account" \
+        -xp "FROM account password" \
         -o message-file="/tmp/mailbody.txt"
