@@ -3,7 +3,7 @@
 
 sudo apt -y install openvpn
 sudo apt -y install sendemail
-sudo apt install libio-socket-ssl-perl libnet-ssleay-perl net-tools
+sudo apt -y install libio-socket-ssl-perl libnet-ssleay-perl net-tools
 
 # !!!  must acuire  AirVPN.tar.gz -
 tar xvzf ~/AirVPN.tar.gz
